@@ -35,7 +35,7 @@ namespace PointFood
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Title = "API PointFood",
-                    Version = "v1",
+                    Version = "v1 - Complete",
                     Description = "API PointFood del curso Aplicaciones Web con NetCore",
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
