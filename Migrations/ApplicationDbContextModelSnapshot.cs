@@ -52,6 +52,138 @@ namespace PointFood.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            Name = "Alitas"
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            Name = "Árabe"
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            Name = "Asiática"
+                        },
+                        new
+                        {
+                            CategoryId = 4,
+                            Name = "Café"
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            Name = "Carnes"
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            Name = "Chifa"
+                        },
+                        new
+                        {
+                            CategoryId = 7,
+                            Name = "Criolla"
+                        },
+                        new
+                        {
+                            CategoryId = 8,
+                            Name = "Desayunos"
+                        },
+                        new
+                        {
+                            CategoryId = 9,
+                            Name = "Hamburguesas"
+                        },
+                        new
+                        {
+                            CategoryId = 10,
+                            Name = "Helados"
+                        },
+                        new
+                        {
+                            CategoryId = 11,
+                            Name = "Internacional"
+                        },
+                        new
+                        {
+                            CategoryId = 12,
+                            Name = "Jugos y Batidos"
+                        },
+                        new
+                        {
+                            CategoryId = 13,
+                            Name = "Mexicana"
+                        },
+                        new
+                        {
+                            CategoryId = 14,
+                            Name = "Panadería"
+                        },
+                        new
+                        {
+                            CategoryId = 15,
+                            Name = "Pastas"
+                        },
+                        new
+                        {
+                            CategoryId = 16,
+                            Name = "Pescados y Mariscos"
+                        },
+                        new
+                        {
+                            CategoryId = 17,
+                            Name = "Pizzas"
+                        },
+                        new
+                        {
+                            CategoryId = 18,
+                            Name = "Poke"
+                        },
+                        new
+                        {
+                            CategoryId = 19,
+                            Name = "Pollería"
+                        },
+                        new
+                        {
+                            CategoryId = 20,
+                            Name = "Postres"
+                        },
+                        new
+                        {
+                            CategoryId = 21,
+                            Name = "Salchipapas"
+                        },
+                        new
+                        {
+                            CategoryId = 22,
+                            Name = "Saludable"
+                        },
+                        new
+                        {
+                            CategoryId = 23,
+                            Name = "Sándwiches"
+                        },
+                        new
+                        {
+                            CategoryId = 24,
+                            Name = "Sopas y Cremas"
+                        },
+                        new
+                        {
+                            CategoryId = 25,
+                            Name = "Sushi"
+                        },
+                        new
+                        {
+                            CategoryId = 26,
+                            Name = "Vegetariana"
+                        });
                 });
 
             modelBuilder.Entity("PointFood.Model.Client", b =>
@@ -361,9 +493,9 @@ namespace PointFood.Migrations
                         {
                             RestaurantOwnerId = 1,
                             Dni = "10000000",
-                            Email = "Savannah.Wright@hotmail.com",
-                            LastName = "Wright",
-                            Name = "Savannah",
+                            Email = "Maria.Gonzales@hotmail.com",
+                            LastName = "Gonzales",
+                            Name = "Maria",
                             Password = "admin",
                             Username = "10000000"
                         },
@@ -371,9 +503,9 @@ namespace PointFood.Migrations
                         {
                             RestaurantOwnerId = 2,
                             Dni = "10000001",
-                            Email = "Caroline.Howard@hotmail.com",
-                            LastName = "Howard",
-                            Name = "Caroline",
+                            Email = "Joseph.Gonzalez@hotmail.com",
+                            LastName = "Gonzalez",
+                            Name = "Joseph",
                             Password = "admin",
                             Username = "10000001"
                         },
@@ -381,9 +513,9 @@ namespace PointFood.Migrations
                         {
                             RestaurantOwnerId = 3,
                             Dni = "10000002",
-                            Email = "Jackson.Green@hotmail.com",
-                            LastName = "Green",
-                            Name = "Jackson",
+                            Email = "Autumn.Hughes@hotmail.com",
+                            LastName = "Hughes",
+                            Name = "Autumn",
                             Password = "admin",
                             Username = "10000002"
                         },
@@ -391,9 +523,9 @@ namespace PointFood.Migrations
                         {
                             RestaurantOwnerId = 4,
                             Dni = "10000003",
-                            Email = "Makayla.Collins@hotmail.com",
-                            LastName = "Collins",
-                            Name = "Makayla",
+                            Email = "Stephanie.Martinez@hotmail.com",
+                            LastName = "Martinez",
+                            Name = "Stephanie",
                             Password = "admin",
                             Username = "10000003"
                         },
@@ -401,9 +533,9 @@ namespace PointFood.Migrations
                         {
                             RestaurantOwnerId = 5,
                             Dni = "10000004",
-                            Email = "Richard.Peterson@hotmail.com",
-                            LastName = "Peterson",
-                            Name = "Richard",
+                            Email = "Colby.Young@hotmail.com",
+                            LastName = "Young",
+                            Name = "Colby",
                             Password = "admin",
                             Username = "10000004"
                         });
@@ -423,6 +555,23 @@ namespace PointFood.Migrations
                     b.HasKey("StateId");
 
                     b.ToTable("States");
+
+                    b.HasData(
+                        new
+                        {
+                            StateId = 1,
+                            Name = "Pendiente"
+                        },
+                        new
+                        {
+                            StateId = 2,
+                            Name = "Entregado"
+                        },
+                        new
+                        {
+                            StateId = 3,
+                            Name = "Cancelado"
+                        });
                 });
 
             modelBuilder.Entity("PointFood.Model.Card", b =>

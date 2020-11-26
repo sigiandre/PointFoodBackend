@@ -12,6 +12,24 @@ namespace PointFood.Persistence.Config
         public StateConfig(EntityTypeBuilder<State> entityBuilder)
         {
             entityBuilder.Property(x => x.Name).IsRequired().HasMaxLength(20);
+
+            entityBuilder.HasData(
+                new State
+                {
+                    StateId = 1,
+                    Name = "Pendiente"
+                },
+                new State
+                {
+                    StateId = 2,
+                    Name = "Entregado"
+                },
+                new State
+                {
+                    StateId = 3,
+                    Name = "Cancelado"
+                }
+                );
         }
     }
 }
