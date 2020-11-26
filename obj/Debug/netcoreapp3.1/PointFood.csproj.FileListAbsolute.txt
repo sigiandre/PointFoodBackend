@@ -368,3 +368,4 @@ C:\Users\andre\Desktop\PointFood\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDoc
 C:\Users\andre\Desktop\PointFood\obj\Debug\netcoreapp3.1\PointFood.csproj.CoreCompileInputs.cache
 C:\Users\andre\Desktop\PointFood\obj\Debug\netcoreapp3.1\PointFood.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\andre\Desktop\PointFood\obj\Debug\netcoreapp3.1\PointFood.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\andre\Desktop\PointFood\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\PointFood20201125235317 - Web Deploy\profile.arm.json

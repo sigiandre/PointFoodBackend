@@ -1,0 +1,1320 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API PointFood",
+    "description": "API PointFood del curso Aplicaciones Web con NetCore",
+    "termsOfService": "https://example.com/terms",
+    "contact": {
+      "name": "Grupo Zord Code - PointFood",
+      "url": "https://github.com/sigiandre/PointFoodBackend",
+      "email": "grupozordcode-PointFoood@upc.edu.pe"
+    },
+    "version": "v1 - Complete"
+  },
+  "paths": {
+    "/cards": {
+      "post": {
+        "tags": [
+          "Card"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CardCreateDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/cards/{cardId}": {
+      "get": {
+        "tags": [
+          "Card"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cardId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CardDto"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Card"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cardId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CardUpdateDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Card"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cardId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "take",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CategoryDtoDataCollection"
+            }
+          }
+        }
+      }
+    },
+    "/clients": {
+      "post": {
+        "tags": [
+          "Client"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ClientCreateDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "take",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ClientDtoDataCollection"
+            }
+          }
+        }
+      }
+    },
+    "/clients/{clientId}": {
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ClientDto"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Client"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ClientUpdateDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Client"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "clientId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/clients/login": {
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ClientLoginDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ClientDto"
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Default"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/menus/restaurants/{restaurantId}": {
+      "get": {
+        "tags": [
+          "Menu"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "restaurantId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "take",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/MenuDtoDataCollection"
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/OrderCreateDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/orders/{orderId}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/OrderDto"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/OrderUpdateDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/orders/restaurants/{restaurantId}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "restaurantId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "take",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/OrderDtoDataCollection"
+            }
+          }
+        }
+      }
+    },
+    "/orders/restaurants/{restaurantId}/states/{stateId}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "restaurantId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "stateId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "take",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/OrderDtoDataCollection"
+            }
+          }
+        }
+      }
+    },
+    "/restaurants": {
+      "get": {
+        "tags": [
+          "Restaurant"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "take",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/RestaurantDtoDataCollection"
+            }
+          }
+        }
+      }
+    },
+    "/restaurants/categories/{categoryId}": {
+      "get": {
+        "tags": [
+          "Restaurant"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "categoryId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "take",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/RestaurantDtoDataCollection"
+            }
+          }
+        }
+      }
+    },
+    "/restaurantowners/login": {
+      "get": {
+        "tags": [
+          "RestaurantOwner"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/RestaurantOwnerLoginDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/RestaurantOwnerDto"
+            }
+          }
+        }
+      }
+    },
+    "/states": {
+      "get": {
+        "tags": [
+          "State"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "take",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/StateDtoDataCollection"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CardCreateDto": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string"
+        },
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "CardDto": {
+      "type": "object",
+      "properties": {
+        "cardId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "number": {
+          "type": "string"
+        },
+        "clientName": {
+          "type": "string"
+        }
+      }
+    },
+    "CardUpdateDto": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string"
+        }
+      }
+    },
+    "CategoryDto": {
+      "type": "object",
+      "properties": {
+        "categoryId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "CategoryDtoDataCollection": {
+      "type": "object",
+      "properties": {
+        "hasItems": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CategoryDto"
+          }
+        },
+        "total": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pages": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "ClientCreateDto": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "ClientDto": {
+      "type": "object",
+      "properties": {
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "signedUpAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "cards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CardDto"
+          }
+        }
+      }
+    },
+    "ClientDtoDataCollection": {
+      "type": "object",
+      "properties": {
+        "hasItems": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ClientDto"
+          }
+        },
+        "total": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pages": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "ClientUpdateDto": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "ClientLoginDto": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "ProductMenuDto": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "ExtraMenuDto": {
+      "type": "object",
+      "properties": {
+        "extraId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "ProductExtraDto": {
+      "type": "object",
+      "properties": {
+        "extra": {
+          "$ref": "#/definitions/ExtraMenuDto"
+        }
+      }
+    },
+    "MenuProductDto": {
+      "type": "object",
+      "properties": {
+        "product": {
+          "$ref": "#/definitions/ProductMenuDto"
+        },
+        "extras": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductExtraDto"
+          }
+        }
+      }
+    },
+    "MenuDto": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuProductDto"
+          }
+        }
+      }
+    },
+    "MenuDtoDataCollection": {
+      "type": "object",
+      "properties": {
+        "hasItems": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuDto"
+          }
+        },
+        "total": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pages": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "ProductDetailCreateDto": {
+      "type": "object",
+      "properties": {
+        "extraId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "quantity": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "OrderDetailCreateDto": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "extras": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductDetailCreateDto"
+          }
+        }
+      }
+    },
+    "OrderCreateDto": {
+      "type": "object",
+      "properties": {
+        "clientId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderDetailCreateDto"
+          }
+        },
+        "deliveredAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "restaurantId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "delivery": {
+          "type": "boolean"
+        },
+        "address": {
+          "type": "string"
+        }
+      }
+    },
+    "ProductOrderDto": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "ExtraOrderDto": {
+      "type": "object",
+      "properties": {
+        "extraId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "ProductDetailDto": {
+      "type": "object",
+      "properties": {
+        "extra": {
+          "$ref": "#/definitions/ExtraOrderDto"
+        },
+        "quantity": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "subTotal": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "OrderDetailDto": {
+      "type": "object",
+      "properties": {
+        "product": {
+          "$ref": "#/definitions/ProductOrderDto"
+        },
+        "extras": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductDetailDto"
+          }
+        },
+        "subTotal": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "RestaurantDto": {
+      "type": "object",
+      "properties": {
+        "restaurantId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "categoryName": {
+          "type": "string"
+        }
+      }
+    },
+    "OrderDto": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "clientName": {
+          "type": "string"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderDetailDto"
+          }
+        },
+        "registeredAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "deliveredAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "restaurant": {
+          "$ref": "#/definitions/RestaurantDto"
+        },
+        "delivery": {
+          "type": "boolean"
+        },
+        "address": {
+          "type": "string"
+        },
+        "total": {
+          "format": "double",
+          "type": "number"
+        },
+        "stateName": {
+          "type": "string"
+        }
+      }
+    },
+    "OrderUpdateDto": {
+      "type": "object",
+      "properties": {
+        "stateId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "OrderDtoDataCollection": {
+      "type": "object",
+      "properties": {
+        "hasItems": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderDto"
+          }
+        },
+        "total": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pages": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "RestaurantDtoDataCollection": {
+      "type": "object",
+      "properties": {
+        "hasItems": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RestaurantDto"
+          }
+        },
+        "total": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pages": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "RestaurantOwnerLoginDto": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "RestaurantOwnerDto": {
+      "type": "object",
+      "properties": {
+        "restaurantOwnerId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "dni": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "restaurant": {
+          "$ref": "#/definitions/RestaurantDto"
+        }
+      }
+    },
+    "StateDto": {
+      "type": "object",
+      "properties": {
+        "stateId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "StateDtoDataCollection": {
+      "type": "object",
+      "properties": {
+        "hasItems": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StateDto"
+          }
+        },
+        "total": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pages": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

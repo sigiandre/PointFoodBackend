@@ -37,7 +37,7 @@ namespace PointFood
                     Title = "API PointFood",
                     Version = "v1 - Complete",
                     Description = "API PointFood del curso Aplicaciones Web con NetCore",
-                    TermsOfService = new Uri("https://example.com/terms"),
+                    TermsOfService = new Uri("https://pointfood20201125235317.azurewebsites.net/swagger/v1/index.html"),
                     Contact = new OpenApiContact
                     {
                         Name = "Grupo Zord Code - PointFood",
@@ -50,7 +50,9 @@ namespace PointFood
 
             services.AddControllers();
             services.AddDbContext<ApplicationDbContext>(
+                //opts => opts.UseMySQL(Configuration.GetConnectionString("MySQLConnection"))
                 opts => opts.UseMySQL(Configuration.GetConnectionString("MySQLConnection"))
+
                 );
             services.AddAutoMapper(typeof(Startup));
 
